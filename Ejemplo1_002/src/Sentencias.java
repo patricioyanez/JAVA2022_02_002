@@ -42,7 +42,7 @@ public class Sentencias {
         {
             System.out.println("Adulto mayor");
         }
-        
+        // tarea 211
         
     }
 }
