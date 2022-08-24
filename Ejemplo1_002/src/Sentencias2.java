@@ -38,7 +38,7 @@ public class Sentencias2 {
             nombre = leer.next();
             System.out.println("Gracias " + nombre + " por votar");
         }
-        
+        // 211 y 221 ppt
         
         
     }
