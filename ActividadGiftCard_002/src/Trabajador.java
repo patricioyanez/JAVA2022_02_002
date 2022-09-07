@@ -48,7 +48,8 @@ public class Trabajador {
 
     @Override
     public String toString() {
-        return "Trabajador{" + "rut=" + rut + ", dv=" + dv + ", nombre=" + nombre + '}';
+        return "Rut        = " + rut + "-" + dv + "\n" +
+                "Nombre     = " + nombre;
     }
     
     

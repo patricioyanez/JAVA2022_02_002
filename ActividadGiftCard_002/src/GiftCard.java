@@ -71,7 +71,7 @@ public class GiftCard {
                     "Clave      = " + clave + "\n" + 
                     "Monto      = " + monto + "\n" +
                     "Vigencia   = " + vigencia + "\n" + 
-                    "Trabajador = " + trabajador;
+                     trabajador;
     }
     
     public long generarCodigo(long codigo)
@@ -85,5 +85,12 @@ public class GiftCard {
         String clave = "" + this.trabajador.getRut();
         clave = clave.substring(0, 4);
         this.clave = Integer.parseInt(clave); // convierte str a int
+    }
+    public boolean verificarSaldo(int montoCompra)
+    {
+        if(montoCompra > this.monto)
+            return false;
+        else
+            return true;
     }
 }
