@@ -66,12 +66,24 @@ public class GiftCard {
 
     @Override
     public String toString() {
-        return "GiftCard{" + "codigo=" + codigo + ", clave=" + clave + ", monto=" + monto + ", vigencia=" + vigencia + ", trabajador=" + trabajador + '}';
+        return "**** Datos de GiftCard ****\n" + 
+                    "Codigo     = " + codigo + "\n" +
+                    "Clave      = " + clave + "\n" + 
+                    "Monto      = " + monto + "\n" +
+                    "Vigencia   = " + vigencia + "\n" + 
+                    "Trabajador = " + trabajador;
     }
     
     public long generarCodigo(long codigo)
     {
         this.codigo = codigo + 1 ;
         return this.codigo;
+    }
+    public void generarClave()
+    {
+        //String clave = Integer.toString(this.trabajador.getRut());
+        String clave = "" + this.trabajador.getRut();
+        clave = clave.substring(0, 4);
+        this.clave = Integer.parseInt(clave); // convierte str a int
     }
 }
