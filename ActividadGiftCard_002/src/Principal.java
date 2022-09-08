@@ -27,6 +27,27 @@ public class Principal {
         System.out.println(g1.toString());
         System.out.println(g2);
         
+        int saldo = g1.descontar(50000);
+        if(saldo >= 0)
+            System.out.println("g1: Saldo de la GiftCard: " + saldo);
+        else
+            System.out.println("g1: Saldo insuficiente");
+        
+        saldo = g2.descontar(500000);
+        if(saldo >= 0)
+            System.out.println("g2: Saldo de la GiftCard: " + saldo);
+        else
+            System.out.println("g2: Saldo insuficiente");
+        
+        if(g1.validarVigencia())
+            System.out.println("g1: Puede comprar");
+        else
+            System.out.println("g1: NO puede comprar");
+        
+        if(g2.validarVigencia())
+            System.out.println("g2: Puede comprar");
+        else
+            System.out.println("g2: NO puede comprar vencio el: " + g2.getVigencia());
         
     }
 }
