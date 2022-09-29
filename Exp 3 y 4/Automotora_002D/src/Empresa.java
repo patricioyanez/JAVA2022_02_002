@@ -26,6 +26,7 @@ public class Empresa {
 
     public void listar()
     {
+        System.out.println("**** Listado de empleados ****");
         for (Empleado empleado : empleados) {
             System.out.println(empleado.datos());
         }

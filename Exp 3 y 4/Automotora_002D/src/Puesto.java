@@ -31,7 +31,7 @@ public class Puesto {
     public String datos() {
         return "Puesto  :\n" + 
                 "codigo: " + codigo + 
-                " nombre: " + nombre;
+                " nombre puesto: " + nombre;
     }
     
     
