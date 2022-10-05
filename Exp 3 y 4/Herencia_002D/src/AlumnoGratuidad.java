@@ -21,5 +21,20 @@ public class AlumnoGratuidad extends Alumno{
     }
     
 // sobre carga
-    
+    public void calcularMatricula()
+    {
+        if(activo)
+            System.out.println("Matricula costo cero");
+        else
+            System.out.println("Debe pagar la matricula");
+    }
+    public void calcularMatricula(int valor)
+    {
+        System.out.println("Debe Pagar: " + valor);
+    }    
+    public void calcularMatricula(int valor, int descuento)
+    {
+        int total = valor - (valor * descuento / 100);
+        System.out.println("Debe Pagar: " + total);
+    }
 }
