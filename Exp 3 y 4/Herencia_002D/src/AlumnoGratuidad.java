@@ -17,7 +17,7 @@ public class AlumnoGratuidad extends Alumno{
     @Override
     public String datos() {
         return super.datos() +
-                "\nActivo   : " + (this.activo?"Si":"No");
+                "\nActivo  : " + (this.activo?"Si":"No");
     }
     
 // sobre carga

@@ -16,7 +16,7 @@ public class Alumno extends Persona{
     @Override
     public String datos() {
         return super.datos() +
-                "\nCarrera  : " + this.carrera;
+                "\nCarrera : " + this.carrera;
     }
     
     
