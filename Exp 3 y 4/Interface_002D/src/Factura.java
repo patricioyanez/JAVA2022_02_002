@@ -1,7 +1,14 @@
 
 public class Factura extends Venta {
+
     private String rut;
 
+    public Factura() {
+        int total = 1000;
+        // se puede ocupar sin IOperaciones
+        total += (total * IOperaciones.IVA / 100);
+        System.out.println("Total :" + total);
+    }
     public String getRut() {
         return rut;
     }
