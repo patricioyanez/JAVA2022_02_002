@@ -35,6 +35,8 @@ public class frmMenu extends javax.swing.JFrame {
         mnuCerrar = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menú principal");
+        setAlwaysOnTop(true);
 
         jMenu1.setText("Administración");
 
