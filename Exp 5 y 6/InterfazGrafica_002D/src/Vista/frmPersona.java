@@ -186,6 +186,7 @@ public class frmPersona extends javax.swing.JFrame {
             persona.setApellido(txtApellido.getText().trim());
             persona.setDireccion(txtDireccion.getText().trim());
             JOptionPane.showMessageDialog(this, "Datos guardados");
+            btnLimpiar.doClick();
         }
         
         
