@@ -316,6 +316,7 @@ public class frmAdministrativo extends javax.swing.JFrame {
             administrativo.setSueldo(numero);
             
             JOptionPane.showMessageDialog(this, administrativo.imprimirDatos());
+            btnLimpiar.doClick();
         }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
