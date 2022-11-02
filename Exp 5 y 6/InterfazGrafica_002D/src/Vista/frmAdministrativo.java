@@ -5,12 +5,11 @@
  */
 package Vista;
 
-/**
- *
- * @author patri
- */
-public class frmAdministrativo extends javax.swing.JFrame {
+import Modelo.Administrativo;
+import javax.swing.JOptionPane;
 
+public class frmAdministrativo extends javax.swing.JFrame {
+    private Administrativo administrativo = new Administrativo();
     /**
      * Creates new form frmAdministrativo
      */
@@ -156,9 +155,10 @@ public class frmAdministrativo extends javax.swing.JFrame {
                                             .addComponent(btnBuscar)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                             .addComponent(btnCerrar))
-                                        .addComponent(txtAltura, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(txtEdad)
-                                        .addComponent(txtApellido)))
+                                        .addComponent(txtApellido)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                            .addComponent(txtEdad, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
+                                            .addComponent(txtAltura, javax.swing.GroupLayout.Alignment.LEADING))))
                                 .addGroup(layout.createSequentialGroup()
                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addComponent(jLabel3)
@@ -255,8 +255,68 @@ public class frmAdministrativo extends javax.swing.JFrame {
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
         // TODO add your handling code here:
         // validar...
-        
-        
+        if(txtRut.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta rut");
+            txtRut.requestFocus();
+        }
+        else if(txtNombre.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta nombre");
+            txtNombre.requestFocus();
+        }
+        else if(txtApellido.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta apellido");
+            txtApellido.requestFocus();
+        }
+        else if(txtEdad.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta edad");
+            txtEdad.requestFocus();
+        }
+        else if(txtAltura.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta altura");
+            txtAltura.requestFocus();
+        }
+        else if(!rdoFemenino.isSelected() && 
+                !rdoMasculino.isSelected() && 
+                !rdoX.isSelected() )
+        {
+            JOptionPane.showMessageDialog(this, "Falta seleccionar un género");
+            rdoFemenino.requestFocus();
+        }
+        else if(txtSueldo.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta sueldo");
+            txtSueldo.requestFocus();
+        }
+        else
+        {
+            int numero = Integer.parseInt(txtRut.getText());
+            administrativo.setRut(numero);
+            administrativo.setNombre(txtNombre.getText());
+            administrativo.setApellido(txtApellido.getText());
+            
+            numero = Integer.parseInt(txtEdad.getText());
+            administrativo.setEdad(numero);
+            
+            double decimal = Double.parseDouble(txtAltura.getText());
+            administrativo.setAltura(decimal);
+            
+            if(rdoFemenino.isSelected())
+                administrativo.setGenero('F');
+            else if(rdoMasculino.isSelected())
+                administrativo.setGenero('M');
+            else
+                administrativo.setGenero('X');
+            
+            numero = Integer.parseInt(txtSueldo.getText());
+            administrativo.setSueldo(numero);
+            
+            JOptionPane.showMessageDialog(this, administrativo.imprimirDatos());
+        }
     }//GEN-LAST:event_btnGuardarActionPerformed
 
     /**

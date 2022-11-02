@@ -71,9 +71,11 @@
                                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                           <Component id="btnCerrar" min="-2" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="txtAltura" alignment="0" min="-2" pref="60" max="-2" attributes="0"/>
-                                      <Component id="txtEdad" alignment="0" max="32767" attributes="0"/>
                                       <Component id="txtApellido" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="txtEdad" alignment="0" pref="60" max="32767" attributes="0"/>
+                                          <Component id="txtAltura" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">

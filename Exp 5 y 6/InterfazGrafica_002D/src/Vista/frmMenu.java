@@ -31,6 +31,7 @@ public class frmMenu extends javax.swing.JFrame {
         jMenu1 = new javax.swing.JMenu();
         mnuPersona = new javax.swing.JMenuItem();
         mnuAutomovil = new javax.swing.JMenuItem();
+        mnuAdministrativo = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         mnuCerrar = new javax.swing.JMenuItem();
 
@@ -55,6 +56,14 @@ public class frmMenu extends javax.swing.JFrame {
             }
         });
         jMenu1.add(mnuAutomovil);
+
+        mnuAdministrativo.setText("Administrativos");
+        mnuAdministrativo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                mnuAdministrativoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(mnuAdministrativo);
 
         jMenuBar1.add(jMenu1);
 
@@ -101,6 +110,11 @@ public class frmMenu extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_mnuCerrarActionPerformed
 
+    private void mnuAdministrativoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mnuAdministrativoActionPerformed
+        // TODO add your handling code here:
+        new frmAdministrativo().setVisible(true);
+    }//GEN-LAST:event_mnuAdministrativoActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -140,6 +154,7 @@ public class frmMenu extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem mnuAdministrativo;
     private javax.swing.JMenuItem mnuAutomovil;
     private javax.swing.JMenuItem mnuCerrar;
     private javax.swing.JMenuItem mnuPersona;
