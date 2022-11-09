@@ -3,38 +3,36 @@ package Modelo;
 
 public class Automovil {
     private String patente;
+    private int numeropuertas;
     private Double cilindrada;
+    private String color;
     private String marca;
     private String modelo;
-    private int puertas;
-    private Double maletero;
+    private int anio;
     private Boolean encendidoElectronico;
+    private String tipoCombustible;
 
     public Automovil() {
         this.patente = "";
-        this.cilindrada = 0D;
+        this.numeropuertas = 0;
+        this.cilindrada = 0d;
+        this.color = "";
         this.marca = "";
-        this.modelo = "";
-        this.puertas = 0;
-        this.maletero = 0D;
+        this.modelo = modelo;
+        this.anio = 0;
         this.encendidoElectronico = false;
+        this.tipoCombustible = "";
     }
-    public Automovil(String patente, Double cilindrada, String marca, String modelo, int puertas, Double maletero, Boolean encendidoElectronico) {
+    public Automovil(String patente, int numeropuertas, Double cilindrada, String color, String marca, String modelo, int anio, Boolean encendidoElectronico, String tipoCombustible) {
         this.patente = patente;
+        this.numeropuertas = numeropuertas;
         this.cilindrada = cilindrada;
+        this.color = color;
         this.marca = marca;
         this.modelo = modelo;
-        this.puertas = puertas;
-        this.maletero = maletero;
+        this.anio = anio;
         this.encendidoElectronico = encendidoElectronico;
-    }
-
-    public Boolean getEncendidoElectronico() {
-        return encendidoElectronico;
-    }
-
-    public void setEncendidoElectronico(Boolean encendidoElectronico) {
-        this.encendidoElectronico = encendidoElectronico;
+        this.tipoCombustible = tipoCombustible;
     }
 
     public String getPatente() {
@@ -45,12 +43,28 @@ public class Automovil {
         this.patente = patente;
     }
 
+    public int getNumeropuertas() {
+        return numeropuertas;
+    }
+
+    public void setNumeropuertas(int numeropuertas) {
+        this.numeropuertas = numeropuertas;
+    }
+
     public Double getCilindrada() {
         return cilindrada;
     }
 
     public void setCilindrada(Double cilindrada) {
         this.cilindrada = cilindrada;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String getMarca() {
@@ -69,35 +83,32 @@ public class Automovil {
         this.modelo = modelo;
     }
 
-    public int getPuertas() {
-        return puertas;
+    public int getAnio() {
+        return anio;
     }
 
-    public void setPuertas(int puertas) {
-        this.puertas = puertas;
+    public void setAnio(int anio) {
+        this.anio = anio;
     }
 
-    public Double getMaletero() {
-        return maletero;
+    public Boolean getEncendidoElectronico() {
+        return encendidoElectronico;
     }
 
-    public void setMaletero(Double maletero) {
-        this.maletero = maletero;
+    public void setEncendidoElectronico(Boolean encendidoElectronico) {
+        this.encendidoElectronico = encendidoElectronico;
     }
-    
-    public void limpiar()
-    {
-        this.patente = "";
-        this.cilindrada = 0D;
-        this.marca = "";
-        this.modelo = "";
-        this.puertas = 0;
-        this.maletero = 0D;
-        this.encendidoElectronico = false;
+
+    public String getTipoCombustible() {
+        return tipoCombustible;
+    }
+
+    public void setTipoCombustible(String tipoCombustible) {
+        this.tipoCombustible = tipoCombustible;
     }
 
     public String obtenerDatos() {
-        return "Automovil{" + "patente=" + patente + ", cilindrada=" + cilindrada + ", marca=" + marca + ", modelo=" + modelo + ", puertas=" + puertas + ", maletero=" + maletero + ", encendidoElectronico=" + encendidoElectronico + '}';
+        return "Automovil{" + "patente=" + patente + ", numeropuertas=" + numeropuertas + ", cilindrada=" + cilindrada + ", color=" + color + ", marca=" + marca + ", modelo=" + modelo + ", anio=" + anio + ", encendidoElectronico=" + encendidoElectronico + ", tipoCombustible=" + tipoCombustible + '}';
     }
-    
+
 }
