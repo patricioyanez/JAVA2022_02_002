@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Controlador.CPersona;
 import Modelo.Persona;
 import javax.swing.JOptionPane;
 
@@ -182,8 +183,17 @@ public class frmPersona extends javax.swing.JFrame {
             persona.setNombre(txtNombre.getText().trim());
             persona.setApellido(txtApellido.getText().trim());
             persona.setDireccion(txtDireccion.getText().trim());
-            JOptionPane.showMessageDialog(this, "Datos guardados");
-            btnLimpiar.doClick();
+            
+            CPersona controlador = new CPersona();
+            boolean resultado = controlador.agregar(persona);
+            
+            if(resultado)
+            {
+                JOptionPane.showMessageDialog(this, "Datos guardados");
+                btnLimpiar.doClick();
+            }
+            else    
+                JOptionPane.showMessageDialog(this, "Ocurrio un error");
         }
         
         
