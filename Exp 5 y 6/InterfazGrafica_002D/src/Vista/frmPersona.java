@@ -235,6 +235,7 @@ public class frmPersona extends javax.swing.JFrame {
                 btnLimpiar.doClick();
             }
         } 
+        // EJERCICIOS: crear controlador de administrativo
     }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
