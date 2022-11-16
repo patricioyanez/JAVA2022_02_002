@@ -44,6 +44,7 @@ public class frmPersona extends javax.swing.JFrame {
         btnLimpiar = new javax.swing.JButton();
         btnGuardar = new javax.swing.JButton();
         btnBuscar = new javax.swing.JButton();
+        btnModifcar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Registro de persona");
@@ -83,6 +84,13 @@ public class frmPersona extends javax.swing.JFrame {
             }
         });
 
+        btnModifcar.setText("Modificar");
+        btnModifcar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModifcarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -101,7 +109,9 @@ public class frmPersona extends javax.swing.JFrame {
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(btnLimpiar)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(btnGuardar))
+                                    .addComponent(btnGuardar)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(btnModifcar))
                                 .addComponent(txtNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(layout.createSequentialGroup()
                                     .addComponent(txtRut, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -119,7 +129,7 @@ public class frmPersona extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(96, 96, 96)
                         .addComponent(jLabel1)))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -147,7 +157,8 @@ public class frmPersona extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnLimpiar)
                     .addComponent(btnGuardar)
-                    .addComponent(jLabel6))
+                    .addComponent(jLabel6)
+                    .addComponent(btnModifcar))
                 .addContainerGap(49, Short.MAX_VALUE))
         );
 
@@ -238,6 +249,52 @@ public class frmPersona extends javax.swing.JFrame {
         // EJERCICIOS: crear controlador de administrativo
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void btnModifcarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModifcarActionPerformed
+        // TODO add your handling code here:
+        // 1er validar info
+        if(txtRut.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Rut");
+            txtRut.requestFocus();
+        }
+        else if(txtNombre.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Nombre");
+            txtNombre.requestFocus();
+        }
+        else if(txtApellido.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Apellido");
+            txtApellido.requestFocus();
+        }
+        else if(txtDireccion.getText().trim().length() < 1)
+        {
+            JOptionPane.showMessageDialog(this, "Falta Dirección");
+            txtDireccion.requestFocus();
+        }
+        else
+        {
+            // guardar la info en el objeto persona
+            Persona persona = new Persona();
+            persona.setRut(txtRut.getText().trim());
+            persona.setNombre(txtNombre.getText().trim());
+            persona.setApellido(txtApellido.getText().trim());
+            persona.setDireccion(txtDireccion.getText().trim());
+            
+            CPersona controlador = new CPersona();
+            boolean resultado = controlador.modificar(persona);
+            
+            if(resultado)
+            {
+                JOptionPane.showMessageDialog(this, "Datos guardados");
+                btnLimpiar.doClick();
+            }
+            else    
+                JOptionPane.showMessageDialog(this, "Ocurrio un error");
+        }
+        
+    }//GEN-LAST:event_btnModifcarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -277,6 +334,7 @@ public class frmPersona extends javax.swing.JFrame {
     private javax.swing.JButton btnBuscar;
     private javax.swing.JButton btnGuardar;
     private javax.swing.JButton btnLimpiar;
+    private javax.swing.JButton btnModifcar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
