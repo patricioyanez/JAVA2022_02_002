@@ -86,4 +86,22 @@ public class CPersona {
         }
         return false;
     }
+
+    public boolean eliminar(String rut)
+    {
+        try {
+            Connection cnx = conexion.obtenerConexion();
+            String sql = "DELETE FROM PERSONA WHERE RUT = ?";
+            PreparedStatement sp = cnx.prepareStatement(sql);
+            sp.setString(1, rut);
+            sp.executeUpdate();
+            sp.close();
+            cnx.close();
+            return true;
+        } catch (SQLException ex) {
+            Logger.getLogger(CPersona.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return false;
+    }
+    
 }
