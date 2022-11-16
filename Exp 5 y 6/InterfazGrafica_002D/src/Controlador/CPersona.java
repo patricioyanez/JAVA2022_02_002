@@ -62,4 +62,28 @@ public class CPersona {
         }
         return null;
     }
+    
+    public boolean modificar(Persona persona)
+    {
+        try{
+            Connection cnx = conexion.obtenerConexion();
+            String sql = "UPDATE PERSONA SET NOMBRE=?, APELLIDO=?, DIRECCION=? WHERE RUT=?";
+            
+            PreparedStatement ps = cnx.prepareStatement(sql);
+            ps.setString(1, persona.getNombre());
+            ps.setString(2, persona.getApellido());
+            ps.setString(3, persona.getDireccion());
+            ps.setString(4, persona.getRut());
+            
+            ps.executeUpdate();
+            ps.close();
+            cnx.close();
+            return true;
+        }
+        catch( Exception ex)
+        {
+            System.out.println("Error en la ejecución de la sentencia");
+        }
+        return false;
+    }
 }
