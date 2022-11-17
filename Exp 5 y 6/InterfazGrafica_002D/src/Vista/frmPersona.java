@@ -417,7 +417,7 @@ public class frmPersona extends javax.swing.JFrame {
                                         });
         }
         
-        
+        // ACTIVIDAD: REALIZAR C.R.U.D. PARA ADMINISTRATIVO
     }//GEN-LAST:event_btnListarActionPerformed
 
     /**
